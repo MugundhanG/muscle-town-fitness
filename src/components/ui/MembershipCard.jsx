@@ -12,7 +12,7 @@ export default function MembershipCard({ tier, delay = 0 }) {
         }`}
       >
         {tier.highlighted && (
-          <span className="w-fit rounded-full bg-primary px-3 py-1 text-[0.65rem] font-bold uppercase tracking-wide text-white">
+          <span className="w-fit rounded-full bg-primary-deep px-3 py-1 text-[0.65rem] font-bold uppercase tracking-wide text-white">
             Most Popular
           </span>
         )}

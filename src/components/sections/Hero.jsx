@@ -42,7 +42,7 @@ export default function Hero() {
               ['All Levels', 'Beginner to Advanced'],
             ].map(([value, label]) => (
               <div key={label}>
-                <dt className="font-display text-2xl text-primary">{value}</dt>
+                <dt className="font-display text-2xl uppercase text-primary">{value}</dt>
                 <dd className="text-xs uppercase tracking-wide text-ink-soft">{label}</dd>
               </div>
             ))}

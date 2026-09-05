@@ -94,7 +94,7 @@ export default function Contact() {
                 href={whatsappLink()}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-4 inline-flex items-center gap-2 rounded-lg bg-[#25D366] px-5 py-2.5 text-sm font-bold uppercase tracking-wide text-white"
+                className="mt-4 inline-flex cursor-pointer items-center gap-2 rounded-lg bg-[#075E54] px-5 py-2.5 text-sm font-bold uppercase tracking-wide text-white"
               >
                 <MessageCircle size={18} />
                 Chat on WhatsApp

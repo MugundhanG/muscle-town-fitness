@@ -21,7 +21,7 @@ export default function FaqAccordion({ faqs, defaultOpenIndex = -1 }) {
                 aria-expanded={isOpen}
                 aria-controls={panelId}
                 onClick={() => setOpenIndex(isOpen ? -1 : index)}
-                className="flex w-full items-center justify-between gap-4 px-5 py-4 text-left"
+                className="flex w-full cursor-pointer items-center justify-between gap-4 px-5 py-4 text-left"
               >
                 <span className="font-semibold text-ink">{faq.q}</span>
                 <ChevronDown

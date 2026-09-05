@@ -1,7 +1,10 @@
 import { Link } from 'react-router-dom'
 
 const VARIANTS = {
-  primary: 'bg-primary text-white hover:bg-primary-deep shadow-sm shadow-primary/30',
+  // White text on the raw --color-primary orange fails WCAG AA contrast
+  // (3.4:1) at button-label text sizes — primary-deep passes at 4.7:1.
+  // Hover darkens further (never lightens) so contrast never regresses.
+  primary: 'bg-primary-deep text-white hover:brightness-90 shadow-sm shadow-primary/30',
   accent: 'bg-accent text-canvas hover:bg-accent-deep shadow-sm shadow-accent/20',
   outline: 'border border-line text-ink hover:border-primary hover:text-primary',
   ghost: 'text-ink hover:bg-surface-alt',
@@ -23,7 +26,7 @@ export default function Button({
   children,
   ...rest
 }) {
-  const classes = `inline-flex items-center justify-center gap-2 rounded-lg font-semibold uppercase tracking-wide transition-colors duration-200 ${VARIANTS[variant]} ${SIZES[size]} ${className}`
+  const classes = `inline-flex cursor-pointer items-center justify-center gap-2 rounded-lg font-semibold uppercase tracking-wide transition-all duration-200 ${VARIANTS[variant]} ${SIZES[size]} ${className}`
 
   const content = (
     <>

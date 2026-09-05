@@ -32,7 +32,7 @@ export default function Lightbox({ items, index, onClose, onNavigate }) {
         type="button"
         onClick={onClose}
         aria-label="Close gallery"
-        className="absolute right-5 top-5 flex h-11 w-11 items-center justify-center rounded-full bg-white/10 text-white hover:bg-white/20"
+        className="absolute right-5 top-5 flex h-11 w-11 cursor-pointer items-center justify-center rounded-full bg-white/10 text-white hover:bg-white/20"
       >
         <X size={22} />
       </button>
@@ -44,7 +44,7 @@ export default function Lightbox({ items, index, onClose, onNavigate }) {
           onNavigate((index - 1 + items.length) % items.length)
         }}
         aria-label="Previous image"
-        className="absolute left-3 top-1/2 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full bg-white/10 text-white hover:bg-white/20 md:left-6"
+        className="absolute left-3 top-1/2 flex h-11 w-11 -translate-y-1/2 cursor-pointer items-center justify-center rounded-full bg-white/10 text-white hover:bg-white/20 md:left-6"
       >
         <ChevronLeft size={24} />
       </button>
@@ -68,7 +68,7 @@ export default function Lightbox({ items, index, onClose, onNavigate }) {
           onNavigate((index + 1) % items.length)
         }}
         aria-label="Next image"
-        className="absolute right-3 top-1/2 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full bg-white/10 text-white hover:bg-white/20 md:right-6"
+        className="absolute right-3 top-1/2 flex h-11 w-11 -translate-y-1/2 cursor-pointer items-center justify-center rounded-full bg-white/10 text-white hover:bg-white/20 md:right-6"
       >
         <ChevronRight size={24} />
       </button>

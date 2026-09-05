@@ -74,7 +74,7 @@ export default function Header() {
 
         <button
           type="button"
-          className="flex h-11 w-11 items-center justify-center rounded-lg text-ink lg:hidden"
+          className="flex h-11 w-11 cursor-pointer items-center justify-center rounded-lg text-ink lg:hidden"
           aria-label={isOpen ? 'Close menu' : 'Open menu'}
           aria-expanded={isOpen}
           onClick={() => setIsOpen((o) => !o)}

@@ -54,7 +54,7 @@ export default function ContactForm() {
             setForm(initialState)
             setSubmitted(false)
           }}
-          className="text-sm font-medium text-primary underline underline-offset-2"
+          className="cursor-pointer text-sm font-medium text-primary underline underline-offset-2"
         >
           Submit another request
         </button>

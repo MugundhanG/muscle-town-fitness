@@ -40,9 +40,10 @@ export default function Gallery() {
                 key={cat}
                 type="button"
                 onClick={() => setActiveCategory(cat)}
-                className={`rounded-lg px-5 py-2 text-sm font-semibold uppercase tracking-wide transition-colors ${
+                aria-pressed={activeCategory === cat}
+                className={`cursor-pointer rounded-lg px-5 py-2.5 text-sm font-semibold uppercase tracking-wide transition-colors ${
                   activeCategory === cat
-                    ? 'bg-primary text-white'
+                    ? 'bg-primary-deep text-white'
                     : 'border border-line text-ink-soft hover:border-primary/60'
                 }`}
               >
@@ -57,7 +58,7 @@ export default function Gallery() {
                 <button
                   type="button"
                   onClick={() => setLightboxIndex(images.gallery.findIndex((g) => g.id === item.id))}
-                  className="block w-full overflow-hidden rounded-lg"
+                  className="block w-full cursor-pointer overflow-hidden rounded-lg"
                   aria-label={`View larger image: ${item.alt}`}
                 >
                   <img

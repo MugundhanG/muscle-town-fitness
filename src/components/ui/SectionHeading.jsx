@@ -19,7 +19,7 @@ export default function SectionHeading({
         </span>
       )}
       <h2
-        className={`font-display text-4xl md:text-5xl lg:text-[3rem] font-normal uppercase leading-[1.05] ${light ? 'text-white' : 'text-ink'}`}
+        className={`font-display text-4xl md:text-5xl lg:text-[3rem] uppercase leading-[1.05] ${light ? 'text-white' : 'text-ink'}`}
       >
         {title}
       </h2>
