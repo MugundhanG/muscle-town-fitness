@@ -35,21 +35,21 @@ export default function Header() {
             </svg>
           </span>
           <span className="flex flex-col leading-none">
-            <span className="font-display text-2xl uppercase text-ink">{business.name}</span>
+            <span className="whitespace-nowrap font-display text-xl uppercase text-ink">{business.name}</span>
             <span className="text-[0.65rem] font-semibold uppercase tracking-[0.18em] text-accent">
               {business.tagline}
             </span>
           </span>
         </Link>
 
-        <nav className="hidden items-center gap-1 lg:flex" aria-label="Primary">
+        <nav className="hidden items-center gap-0.5 xl:flex" aria-label="Primary">
           {NAV_LINKS.map((link) => (
             <NavLink
               key={link.to}
               to={link.to}
               end={link.to === '/'}
               className={({ isActive }) =>
-                `rounded-lg px-3.5 py-2 text-sm font-semibold uppercase tracking-wide transition-colors ${
+                `rounded-lg px-3 py-2 text-sm font-semibold uppercase tracking-wide transition-colors ${
                   isActive ? 'bg-primary-soft text-primary' : 'text-ink-soft hover:bg-surface-alt hover:text-ink'
                 }`
               }
@@ -59,7 +59,7 @@ export default function Header() {
           ))}
         </nav>
 
-        <div className="hidden items-center gap-3 lg:flex">
+        <div className="hidden items-center gap-3 xl:flex">
           <a
             href={telLink()}
             className="flex items-center gap-2 text-sm font-semibold text-ink-soft hover:text-primary"
@@ -74,7 +74,7 @@ export default function Header() {
 
         <button
           type="button"
-          className="flex h-11 w-11 cursor-pointer items-center justify-center rounded-lg text-ink lg:hidden"
+          className="flex h-11 w-11 cursor-pointer items-center justify-center rounded-lg text-ink xl:hidden"
           aria-label={isOpen ? 'Close menu' : 'Open menu'}
           aria-expanded={isOpen}
           onClick={() => setIsOpen((o) => !o)}
@@ -84,7 +84,7 @@ export default function Header() {
       </Container>
 
       {isOpen && (
-        <div className="border-t border-line bg-canvas lg:hidden">
+        <div className="border-t border-line bg-canvas xl:hidden">
           <Container className="flex flex-col gap-1 py-4">
             {NAV_LINKS.map((link) => (
               <NavLink
