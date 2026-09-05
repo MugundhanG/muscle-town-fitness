@@ -1,0 +1,98 @@
+@import "tailwindcss";
+
+@theme {
+  /* Brand palette — near-black canvas with a hot-orange primary and an
+     electric-lime accent, so the site reads as high-energy strength/fitness
+     rather than a generic light "wellness spa" template. */
+  --color-primary: #FF4713;
+  --color-primary-deep: #D93607;
+  --color-primary-soft: #34160C;
+  --color-accent: #C6FF3D;
+  --color-accent-deep: #A6DA22;
+  --color-accent-soft: #212B08;
+  --color-canvas: #0B0B0D;
+  --color-surface: #17181B;
+  --color-surface-alt: #1E2023;
+  --color-ink: #F5F5F4;
+  --color-ink-soft: #A2A3A9;
+  --color-line: #2B2C31;
+
+  --font-display: 'Bebas Neue', ui-sans-serif, system-ui, sans-serif;
+  --font-body: 'Inter', ui-sans-serif, system-ui, sans-serif;
+}
+
+html {
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--color-canvas);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  letter-spacing: 0.01em;
+}
+
+/* Anchor-scroll targets sit behind the sticky header without this offset. */
+:where(section, div)[id] {
+  scroll-margin-top: 96px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.reveal {
+  opacity: 0;
+}
+
+.reveal.is-visible {
+  animation: fade-in-up 0.7s ease-out forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal,
+  .reveal.is-visible {
+    opacity: 1;
+    animation: none;
+  }
+}
+
+/* Continuous marquee for the programs/energy strip. */
+@keyframes marquee-ltr {
+  from { transform: translateX(0%); }
+  to { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  animation: marquee-ltr 28s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-marquee {
+    animation: none;
+  }
+}
+
+html {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-primary) transparent;
+}
